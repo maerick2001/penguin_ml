@@ -9,6 +9,10 @@ import pandas as pd
 
 st.title('Penguin Classifier: A Machine Learning App') 
 
+password_guess = st.text_input("What is the password?!")
+if password_guess != st.secrets['password']:
+  st.stop()
+
 # Display the image
 st.image('penguins.png', width = 400)
 
@@ -136,5 +140,6 @@ else:
             'predict the species, the features used in this prediction '
             'are ranked by relative importance below.')
     st.image('feature_imp.svg')
+
 
 
