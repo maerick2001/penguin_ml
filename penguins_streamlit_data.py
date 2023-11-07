@@ -10,6 +10,11 @@ warnings.filterwarnings('ignore')
 
 st.title('Penguin Classifier: A Machine Learning App') 
 
+password_guess = st.text_input("What is the password?!")
+if password_guess != st.secrets['password']:
+  st.stop()
+
+
 # Display the image
 st.image('penguins.png', width = 400)
 
